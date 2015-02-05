@@ -1,3 +1,132 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+
+<div class="row">
+ 
+    <!-- Contact Details -->
+    <div class="large-9 columns">
+ 
+      <h3>Get in Touch!</h3>
+      <p>We'd love to hear from you. You can either reach out to us as a whole and one of our awesome team members will get back to you, or if you have a specific question reach out to one of our staff. We love getting email all day <em>all day</em>.</p>
+ 
+      <div class="section-container tabs" data-section>
+        <section class="section">
+          <h5 class="title"><a href="#panel1">Contact Our Company</a></h5>
+          <div class="content" data-slug="panel1">
+            <form>
+              <div class="row collapse">
+                <div class="large-2 columns">
+                  <label class="inline">Your Name</label>
+                </div>
+                <div class="large-10 columns">
+                  <input type="text" id="yourName" placeholder="Jane Smith">
+                </div>
+              </div>
+              <div class="row collapse">
+                <div class="large-2 columns">
+                  <label class="inline"> Your Email</label>
+                </div>
+                <div class="large-10 columns">
+                  <input type="text" id="yourEmail" placeholder="jane@smithco.com">
+                </div>
+              </div>
+              <label>What's up?</label>
+              <textarea rows="4"></textarea>
+              <button type="submit" class="radius button">Submit</button>
+            </form>
+          </div>
+        </section>
+        <section class="section">
+          <h5 class="title"><a href="#panel2">Specific Person</a></h5>
+          <div class="content" data-slug="panel2">
+            <ul class="large-block-grid-5">
+              <li><a href="/cdn-cgi/l/email-protection#e68b878aa695839483888f929fc88485c8948384"><img src="http://placehold.it/200x200&amp;text=[person]">Mal Reynolds</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#077d68624774627562696e737e29656429756265"><img src="http://placehold.it/200x200&amp;text=[person]">Zoe Washburne</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#91fbf0e8fff4d1e2f4e3f4fff8e5e8bff3f2bfe3f4f3"><img src="http://placehold.it/200x200&amp;text=[person]">Jayne Cobb</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#7a1e15193a091f081f14130e0354181954081f18"><img src="http://placehold.it/200x200&amp;text=[person]">Simon Tam</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#1d767471716472686a7469757064707473795d6e786f7873746964337f7e336f787f"><img src="http://placehold.it/200x200&amp;text=[person]">River Tam</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#8be7eeeaede4e5ffe3eefce2e5efcbf8eef9eee5e2fff2a5e9e8a5f9eee9"><img src="http://placehold.it/200x200&amp;text=[person]">Hoban Washburne</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#63010c0c0823100611060d0a171a4d01004d110601"><img src="http://placehold.it/200x200&amp;text=[person]">Shepherd Book</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#ed86818888ad9e889f8883849994c38f8ec39f888f"><img src="http://placehold.it/200x200&amp;text=[person]">Kaywinnet Lee Fry</a></li>
+              <li><a href="/cdn-cgi/l/email-protection#234a4d4251426344564a4f470d404c4e530d424f4f"><img src="http://placehold.it/200x200&amp;text=[person]">Inarra Serra</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+ 
+    <!-- End Contact Details -->
+ 
+ 
+    <!-- Sidebar -->
+ 
+
+    <div class="large-3 columns">
+      <h5>Map</h5>
+      <!-- Clicking this placeholder fires the mapModal Reveal modal -->
+      <p>
+        <a href="" data-reveal-id="mapModal"><img src="http://placehold.it/400x280"></a><br />
+        <a href="" data-reveal-id="mapModal">View Map</a>
+      </p>
+      <p>
+        123 Awesome St.<br />
+        Barsoom, MA 95155
+      </p>
+    </div>
+    <!-- End Sidebar -->
+  </div>
+ 
+  <!-- End Main Content and Sidebar -->
+ 
+ 
+  <!-- Footer -->
+ 
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>&copy; Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+ 
+  <!-- End Footer -->
+ 
+ 
+ 
+  <!-- Map Modal -->
+ 
+  <div class="reveal-modal" id="mapModal">
+    <h4>Where We Are</h4>
+    <p><img src="http://placehold.it/800x600" /></p>
+ 
+    <!-- Any anchor with this class will close the modal. This also inherits certain styles, which can be overriden. -->
+    <a href="#" class="close-reveal-modal">&times;</a>
+  </div>
+
+
+
+
+</body>
+</html>
+
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -17,7 +146,11 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @article.category %>
+  <%= @article.category.name %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @article.article_image.url %>
 </p>
 
 <%= link_to 'Edit', edit_admin_article_path(@article) %> |
