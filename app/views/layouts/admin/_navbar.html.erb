@@ -20,7 +20,9 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        <%= link_to destroy_admin_session_path, method: :delete do %>
+                            <i class="fa fa-fw fa-power-off"></i> Log Out
+                        <% end %>
                     </li>
                 </ul>
             </li>
@@ -29,13 +31,18 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <%= link_to admin_categories_path do%>
+                    <%= link_to admin_categories_path do %>
                         <i class="fa fa-fw fa-dashboard"></i> Categories
                     <% end %>
                 </li>
                 <li>
-                    <%= link_to admin_articles_path do%>
+                    <%= link_to admin_articles_path do %>
                         <i class="fa fa-fw fa-dashboard"></i> Articles
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to admin_admins_path do %>
+                        <i class="fa fa-fw fa-dashboard"></i> Admins
                     <% end %>
                 </li>
             </ul>
