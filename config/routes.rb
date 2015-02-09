@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   get 'home/index'
 
+=======
+  devise_for :admins, controllers: { sessions: "admin/sessions" }
+>>>>>>> e4dfce1b3a02320b190855473082ee1fa8f11232
   namespace :admin do
+    root 'admin#index'
     resources :categories
     resources :articles
+    resources :admins
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

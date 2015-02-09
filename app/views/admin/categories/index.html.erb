@@ -1,27 +1,27 @@
-<p id="notice"><%= notice %></p>
+<h1 class="page-header">Categories</h1>
 
-<h1>Listing Admin Categories</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
+<div class="table-responsive">
+  <table class="table table-hover table-striped">
+    <thead>
       <tr>
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', [:admin, category] %></td>
-        <td><%= link_to 'Edit', edit_admin_category_path(category) %></td>
-        <td><%= link_to 'Destroy', [:admin, category], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td><%= link_to 'Show', [:admin, category] %>
+          <%= link_to 'Edit', edit_admin_category_path(category) %>
+          <%= link_to 'Destroy', [:admin, category], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
-<%= link_to 'New Category', new_admin_category_path %>
+<%= link_to 'New Category', new_admin_category_path, class: "btn btn-primary" %>
