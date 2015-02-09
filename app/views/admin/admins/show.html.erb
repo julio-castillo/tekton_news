@@ -1,24 +1,14 @@
-<p id="notice"><%= notice %></p>
+<h1 class="page-header"><%= @admin.name %></h1>
 
 <p>
-  <strong>Title:</strong>
-  <%= @admin.title %>
+  <strong>Name:</strong>
+  <%= @admin.name %>
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= @admin.body %>
+  <strong>Email:</strong>
+  <%= @admin.email %>
 </p>
 
-<p>
-  <strong>Published:</strong>
-  <%= @admin.published %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @admin.category %>
-</p>
-
-<%= link_to 'Edit', edit_admin_admin_path(@admin) %> |
-<%= link_to 'Back', admin_admins_path %>
+<%= link_to 'Edit', edit_admin_admin_path(@admin), class: "btn btn-default" %> |
+<%= link_to 'Back', admin_admins_path, class: "btn btn-default" %>

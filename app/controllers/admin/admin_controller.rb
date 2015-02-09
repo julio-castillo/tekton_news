@@ -3,6 +3,5 @@ class Admin::AdminController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-  	puts "Admin Controller Index"
   end
 end

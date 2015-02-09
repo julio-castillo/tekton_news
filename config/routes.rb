@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :admins, controllers: { sessions: "admin/sessions" }
+  devise_for :admins, controllers: { sessions: "admin/sessions", passwords: "admin/passwords" }
   namespace :admin do
     root 'admin#index'
     resources :categories

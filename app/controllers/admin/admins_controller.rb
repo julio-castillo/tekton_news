@@ -32,7 +32,9 @@ class Admin::AdminsController < Admin::AdminController
 
   # PATCH/PUT /admin/admins/1
   def update
-    if @admin.update(admin_params)
+    updated = admin_params[:password] ? @admin.update_with_password(admin_params) : @admin.update(admin_params)
+    if updated
+      sign_in @admin, :bypass => true if admin_params[:password]
       redirect_to [:admin, @admin], notice: 'Admin was successfully updated.'
     else
       render :edit
@@ -53,6 +55,10 @@ class Admin::AdminsController < Admin::AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_params
-      params.require(:admin).permit(:name, :email)
+      if current_admin == @admin
+        params.require(:admin).permit(:name, :email,:current_password, :password, :password_confirmation).delete_if {|k,v| v.blank?}
+      else
+        params.require(:admin).permit(:name, :email).delete_if {|k,v| v.blank?}
+      end
     end
 end
