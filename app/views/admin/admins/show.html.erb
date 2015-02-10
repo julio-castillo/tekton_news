@@ -10,5 +10,11 @@
   <%= @admin.email %>
 </p>
 
+<p>
+  <strong>Articles:</strong>
+  <%= @admin.articles.count %>
+</p>
+
+
 <%= link_to 'Edit', edit_admin_admin_path(@admin), class: "btn btn-default" %> |
 <%= link_to 'Back', admin_admins_path, class: "btn btn-default" %>

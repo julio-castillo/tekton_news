@@ -5,4 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Admin.create(email: 'julio.castillo@tektonlabs.com', password: 'password', name: 'Julio Castillo')
+
+Category.create(name: "Política")
+Category.create(name: "Economía")
+Category.create(name: "Mundo")
+Category.create(name: "Ciencias")
+
+Admin.create(email: 'julio.castillo@tektonlabs.com', password: 'password', name: 'Julio Castillo', confirmed_at: DateTime.now)

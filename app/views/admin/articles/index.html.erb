@@ -1,30 +1,38 @@
 <h1 class="page-header">Articles</h1>
 
-<div class="table-responsive">
-  <table class="table table-hover table-striped">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Published</th>
-        <th>Category</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @articles.each do |article| %>
+<% if @articles.any? %>
+  <div class="table-responsive">
+    <table class="table table-hover table-striped">
+      <thead>
         <tr>
-          <td><%= article.title %></td>
-          <td><%= article.published %></td>
-          <td><%= article.category.name %></td>
-          <td><%= link_to 'Show', [:admin, article] %>
-          <%= link_to 'Edit', edit_admin_article_path(article) %>
-          <%= link_to 'Destroy', [:admin, article], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th>Title</th>
+          <th>Published</th>
+          <th>Category</th>
+          <th>Actions</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+
+      <tbody>
+        <% @articles.each do |article| %>
+          <tr>
+            <td><%= article.title %></td>
+            <td><%= article.published %></td>
+            <td><%= article.category.name %></td>
+            <td><%= link_to 'Show', [:admin, article] %>
+            <%= link_to 'Edit', edit_admin_article_path(article) %>
+            <%= link_to 'Destroy', [:admin, article], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= will_paginate @articles %>
+<% else %>
+  <div class="alert alert-info">
+      <strong>Nothing to show</strong>
+  </div>
+<% end %>
 
 <br>
 

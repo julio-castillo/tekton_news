@@ -18,6 +18,10 @@ gem 'turbolinks', '2.5.3'
 gem 'jbuilder', '2.2.6'
 # Flexible authentication solution for Rails with Warden
 gem 'devise','3.4.1'
+# provides a simple API for performing paginated queries with Active Record
+gem 'will_paginate', '3.0.7'
+# Hooks into will_paginate to format the html to match Twitter Bootstrap styling.
+gem 'bootstrap-will_paginate', '0.0.10'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '0.4.1', group: :doc

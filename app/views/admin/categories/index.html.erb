@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>Name</th>
+        <th>Articles</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -13,6 +14,7 @@
       <% @categories.each do |category| %>
         <tr>
           <td><%= category.name %></td>
+          <td><%= category.articles.count %></td>
           <td><%= link_to 'Show', [:admin, category] %>
           <%= link_to 'Edit', edit_admin_category_path(category) %>
           <%= link_to 'Destroy', [:admin, category], method: :delete, data: { confirm: 'Are you sure?' } %></td>

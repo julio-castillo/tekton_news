@@ -1,6 +1,12 @@
+<h1 class="page-header"><%= @category.name  %></h1>
+
 <p>
   <strong>Name:</strong>
   <%= @category.name %>
+</p>
+<p>
+  <strong>Articles:</strong>
+  <%= @category.articles.count %>
 </p>
 
 <%= link_to 'Edit', edit_admin_category_path(@category), class: "btn btn-default" %>

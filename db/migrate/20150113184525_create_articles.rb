@@ -5,9 +5,11 @@ class CreateArticles < ActiveRecord::Migration
       t.text :body
       t.boolean :published
       t.references :category, index: true
+      t.references :admin, index: true
 
       t.timestamps null: false
     end
     add_foreign_key :articles, :categories
+    add_foreign_key :articles, :admins
   end
 end

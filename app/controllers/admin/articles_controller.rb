@@ -3,7 +3,7 @@ class Admin::ArticlesController < Admin::AdminController
 
   # GET /admin/articles
   def index
-    @articles = Article.all
+    @articles = Article.all.paginate(page: params[:page])
   end
 
   # GET /admin/articles/1
@@ -21,7 +21,7 @@ class Admin::ArticlesController < Admin::AdminController
 
   # POST /admin/articles
   def create
-    @article = Article.new(article_params)
+    @article = Article.new(article_params.merge(admin: current_admin))
 
     if @article.save
       redirect_to [:admin, @article], notice: 'Article was successfully created.'

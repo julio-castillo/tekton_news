@@ -35,20 +35,21 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <%= link_to admin_categories_path do %>
-                        <i class="fa fa-fw fa-dashboard"></i> Categories
-                    <% end %>
-                </li>
-                <li>
-                    <%= link_to admin_articles_path do %>
-                        <i class="fa fa-fw fa-dashboard"></i> Articles
-                    <% end %>
-                </li>
-                <li>
                     <%= link_to admin_admins_path do %>
                         <i class="fa fa-fw fa-users"></i> Admins
                     <% end %>
                 </li>
+                <li>
+                    <%= link_to admin_categories_path do %>
+                        <i class="fa fa-fw fa-folder"></i> Categories
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to admin_articles_path do %>
+                        <i class="fa fa-fw fa-newspaper-o"></i> Articles
+                    <% end %>
+                </li>
+                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
